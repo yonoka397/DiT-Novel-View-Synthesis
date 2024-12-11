@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>View Synthesis Demo</title>
+	
+	<!-- import fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+	
+	<!-- load css file -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/dropdown_model.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/dropbox_image_select.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/button_image_select.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/image_preview.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/button_image_reselect.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/modal_image.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/status_list.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/progress_bar.css') }}">
+	
+</head>
+<body>
+	<!-- title & subtitle -->
+	<text class="header">Novel View Synthesis Demo</text>
+	<text class="sub-title">made by yonoka</text>
+	
+	<!-- model select dropdown list -->
+	<div class="dropdown-model" id="dropdown-model">
+		<button class="dropdown-btn" id="dropdown-btn">
+		<span class="arrow">&#9662;</span>
+		Chose a model
+		</button>
+		<ul class="dropdown-menu">
+			<li><a id="item1" href="#">train on Objaverse</a></li>
+			<li><a id="item2" href="#">train on MVC</a></li>
+		</ul>
+	</div>
+	
+	<!-- image select container -->
+	<div class="upload-container" id="upload-container" style="display: none;">
+		<div class="drop-zone" id="drop-zone">Drag & Drop Your Image Here</div>
+		<div class="button-image-select" id="button-image-select">choose image</div>
+		<input type="file" id="file-input" style="display: none;" accept="image/*">
+	</div>
+	
+	<!-- preview image -->
+	<div class="preview-container" id="preview-container" style="display: none;">
+		<text class="preview-text" id="preview-text">Preview Loaded Image</text>
+		<div class="preview" id="preview">
+			<div class="image-container">
+				<img class="original-image" id="original-image">
+				
+				<!-- top-right image reselect button -->
+				<button class="button-image-reselect" id="button-image-reselect">
+					<div class="button-reselect-icon">
+						<div class="arrow-container">
+							<div class="arrow-arc1">&#10554;</div>
+							<div class="arrow-arc2">&#10555;</div>
+						</div>
+					</div>
+					<span class="button-reselect-text">reselect</span>
+				</button>
+				
+				<p>Original Image</p>
+			</div>
+			<div class="image-container">
+				<img class="resized-image" id="resized-image">
+				<p>Resized Image</p>
+			</div>
+		</div>
+		<div class="button-image-upload" id="button-image-upload">confirm & upload</div>
+	</div>
+	
+	<!-- image zoom-in modal -->
+	<div class="modal" id="modal">
+		<div class="modal-content">
+			<span class="btn-close-modal" id="btn-close-modal">x</span>
+			<img id="modal-img" src="" alt="Enlarged Preview"/>
+		</div>
+	</div>
+	
+	<!-- image generated container -->
+	<div class="preview-container" id="result-container" style="display: none;">
+		<text class="preview-text">Different View Image</text>
+		<div class="preview">
+			<div class="image-container">
+				<img class="sampled-image" id="sampled-image">
+				<p>Generated Image</p>
+			</div>
+		</div>
+	</div>
+	
+	<!-- status list container -->
+	<div class="status-list" id="status-list">
+		<!-- progress bar container -->
+		<div class="progress-bar-container" id="progress-bar-container">
+			<div class="progress-label" id="progress-label">downloading model weights：0%</div>
+			<div class="progress-container">
+				<div class="progress-bar" id="progress-bar"></div>
+			</div>
+		</div>
+	
+		<!-- current status -->
+		<div class="status-item-current" id="status-item-current">
+			<span class="status-text-current" id="status-text-current">waiting for image upload...</span>
+			<span class="status-time-current" id="status-time-current">10&nbsp;:&nbsp;15&nbsp;&nbsp;AM</span>
+		</div>
+		<div class="status-records" id="status-records">
+			<!-- initial empty status records -->
+		</div>
+	</div>
+	<button class="button-status-list-expand" id="button-status-list-expand">&#11165;</button>
+	<!-- status list expanded overlay -->
+	<div class="overlay-status-list" id="overlay-status-list"></div>
+	
+	
+	<!-- load js file -->
+	<script type="module" src="{{ url_for('static', filename='js/global_var.js') }}"></script>
+	<script type="module" src="{{ url_for('static', filename='js/script.js') }}"></script>
+	<script type="module" src="{{ url_for('static', filename='js/dropdown_model.js') }}"></script>
+	<script type="module" src="{{ url_for('static', filename='js/dropbox_image_select.js') }}"></script>
+	<script type="module" src="{{ url_for('static', filename='js/button_image_select.js') }}"></script>
+	<script type="module" src="{{ url_for('static', filename='js/button_image_reselect.js') }}"></script>
+	<script type="module" src="{{ url_for('static', filename='js/modal_image.js') }}"></script>
+	<script type="module" src="{{ url_for('static', filename='js/status_list.js') }}"></script>
+	
+</body>
+</html>

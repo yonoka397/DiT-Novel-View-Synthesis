@@ -1,0 +1,43 @@
+/* progress bar that show the current progress(download, sample) */
+.progress-bar-container {
+	width: fit-content;
+	height: fit-content;
+	max-height: 0;
+	padding: 0;
+	margin: 0;
+	transition: max-height 1.0s ease;
+}
+
+/* progressive text that show current progress */
+.progress-label {
+	text-align: center;
+	font-size: 20px;
+	color: #555;
+	margin-top: 0;
+	padding-top: 0;
+}
+
+/* background of progress bar */
+.progress-container {
+	width: 90vw;
+	background: #f3f3f3;
+	border-radius: 20px;
+	padding: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	margin: 0px 10px 5px 10px;
+}
+
+/* running progress bar */
+.progress-bar {
+	height: 30px;
+	width: 0;
+	background: linear-gradient(to right, #4caf50, #8bc34a);
+	border-radius: 15px;
+	transition: width 0.4s ease;
+}
+
+
+/* on progressive event */
+.progress-bar-container.showBar {
+	max-height: 72px;
+}

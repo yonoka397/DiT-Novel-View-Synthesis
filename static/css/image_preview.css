@@ -1,0 +1,82 @@
+/* preview the uploaded image */
+.preview-container {
+	margin-top: 30px;
+	position: relative;
+}
+
+/* title of preview zone */
+.preview-text {
+	font-family: 'Gamja Flower', cursive;
+	font-size: clamp(30px, 3vw, 50px);
+}
+
+/* container of images */
+.preview {
+	display: flex;
+	gap: clamp(30px, 5vw, 50px);
+	justify-content: center;
+	align-items: flex-end;
+	margin-top: 15px;
+}
+
+/* container of single image */
+.image-container {
+	position: relative;
+	width: clamp(200px, 50%, 300px);
+	height: clamp(200px, 50%, 300px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* image in container */
+.image-container img {
+	width: 100%;
+	height: 100%;
+	margin-bottom: 0px;
+	display: block;
+	cursor: zoom-in;
+	border: clamp(3px, 0.4vw, 4px) solid #444;
+	border-radius: 10px;
+}
+
+/* text that describe the image */
+.image-container p {
+	font-size: clamp(20px, 4.0vw, 30px);
+	margin: 0;
+	text-align: center;
+}
+
+/* button confirm and upload image to the server */
+.button-image-upload {
+	padding: 0px 10px;
+	border: 4px outset #999;
+	border-radius: 10px;
+	width: fit-content;
+	height: fit-content;
+	margin: 5px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #464;
+	background-color: #CEC;
+	border-color: #ACA;
+	font-size: clamp(26px, 2.5vw, 40px);
+	margin-top: 15px;
+	cursor: pointer;
+}
+
+
+/* on button event */
+.button-image-upload:hover {
+	color: #8A8;
+	background-color: #DFD;
+	border-color: #BDB;
+}
+
+.button-image-upload:active {
+	color: #ACA;
+	background-color: #EFE;
+	border-color: #EFE;
+	transform: scale(0.98);
+}

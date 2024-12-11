@@ -1,0 +1,21 @@
+/* drop zone that recieve image from user drag and drop */
+.drop-zone {
+	border: 2px dashed #888;
+	border-radius: 10px;
+	width: clamp(300px, 50%, 600px);
+	height: clamp(200px, 30vw, 400px);
+	margin: 20px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #666;
+	font-size: clamp(26px, 2.7vw, 40px);
+}
+
+
+/* on dropbox event */
+.drop-zone.dragover {
+	border-color: #000;
+	background-color: #f0f0f0;
+	color: #111;
+}

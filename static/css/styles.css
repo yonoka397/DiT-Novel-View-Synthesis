@@ -1,0 +1,40 @@
+/* global content */
+body {
+	font-family: 'Gamja Flower', cursive;
+	text-align: center;
+	padding: 10px;
+	padding-bottom: 130px;
+	background: linear-gradient(to bottom, #d8e7fc, #f6def8);
+	min-height: 100vh;
+	height: fit-content;
+}
+
+.header {
+	font-family: 'Itim', cursive;
+	font-size: clamp(30px, 4.3vw, 50px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 20px;
+}
+
+.sub-title {
+	font-family: 'Itim', cursive;
+	font-size: clamp(15px, 1.5vw, 20px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* upload container include dropbox and select button */
+.upload-container {
+	transition: all 0.5s ease;
+	opacity: 0;
+	transform: translateY(-300px);
+}
+
+/* on image selected event */
+.upload-container.show {
+	opacity: 1;
+	transform: translateY(0);
+}

@@ -1,0 +1,32 @@
+/* button that open file selector to choose image */
+.button-image-select {
+	padding: 0px 10px;
+	border: 4px outset #999;
+	border-radius: 10px;
+	width: fit-content;
+	height: fit-content;
+	margin: 5px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #444;
+	background-color: #CCC;
+	border-color: #AAA;
+	font-size: clamp(26px, 2.7vw, 40px);
+	cursor: pointer;
+}
+
+
+/* on button event */
+.button-image-select:hover {
+	color: #888;
+	background-color: #DDD;
+	border-color: #BBB;
+}
+
+.button-image-select:active {
+	color: #AAA;
+	background-color: #EEE;
+	border-color: #EEE;
+	transform: scale(0.98);
+}

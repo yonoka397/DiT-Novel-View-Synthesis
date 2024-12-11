@@ -1,0 +1,148 @@
+/* status list at the bottom show the all status */
+.status-list {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100vw;
+	max-height: 40px;
+	background-color: #f8f9fa;
+	border-top: 1px solid #ddd;
+	padding-top: 5px;
+	box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+	z-index: 998;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column-reverse;
+	transition: all 1.0s ease;
+	align-items: center;
+}
+
+/* current status container */
+.status-item-current {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-top: 3px solid #DDD;
+	font-weight: bold;
+	padding: 10px;
+}
+
+/* current status text */
+.status-text-current {
+	font-size: 22px;
+	color: #333;
+	margin-left: 20px;
+	display: inline-block;
+}
+
+/* each char in the current status text */
+.char {
+	display: inline-block;
+}
+
+/* current status time */
+.status-time-current {
+	font-size: 18px;
+	color: #666;
+	white-space: nowrap;
+	margin-right: 20px;
+}
+
+/* old statuses container */
+.status-records {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+/* single old status container */
+.status-item {
+	width: 90vw;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #f1f1f1;
+	border-top: 3px solid #DDD;
+	padding: 5px 5px 5px 10px;
+}
+
+/* old status text */
+.status-text {
+	font-size: 20px;
+	color: #666;
+	margin-left: 20px;
+}
+
+/* old status time */
+.status-time {
+	font-size: 18px;
+	color: #888;
+	white-space: nowrap;
+	margin-right: 20px;
+}
+
+/* button to expand the status list */
+.button-status-list-expand {
+	width: 30px;
+	height: 26px;
+	position: fixed;
+	right: 30px;
+	bottom: 34px;
+	background: none;
+	border: 3px solid #c7d5e8;
+	border-radius: 4px;
+	font-size: 20px;
+	line-height: 0px;
+	text-align: center;
+	color: #888;
+	background-color: #f1f1f1;
+	cursor: pointer;
+	z-index: 999;
+	padding: 0px;
+	margin: 0;
+	transform: scaleX(1.5);
+	transition: right 0.7s ease, bottom 1.2s ease, border 1.0s ease, transform 0.7s ease;
+}
+
+/* overlay when expand the status list */
+.overlay-status-list {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.4);
+	display: none;
+	z-index: 997;
+}
+
+
+/* event on expand status list */
+.status-list.showBar {
+	max-height: 112px;
+}
+
+.status-list.open {
+	max-height: 50vh;
+}
+
+.overlay-status-list.active {
+	display: block;
+}
+
+.button-status-list-expand.active {
+	right: calc(50vw - 12px);
+	border: 3px solid #f8f9fa;
+	transform: scaleX(1.5) rotate(180deg);
+}
+
+
+/* text animation */
+@keyframes jump {
+	0%, 100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-6px);
+	}
+}

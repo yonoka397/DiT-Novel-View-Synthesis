@@ -1,0 +1,129 @@
+/* button at top right of original image for reselecting image by show image dropbox and select button */
+.button-image-reselect {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	background-color: #CCC;
+	color: #444;
+	--parent-color: #444;
+	border: clamp(3px, 0.4vw, 4px) solid #999;
+	border-radius: 50px;
+	padding: 0 0px 0 0px;
+	overflow: hidden;
+	cursor: pointer;
+	width: clamp(27px, 6vw, 40px);
+	height: clamp(27px, 6vw, 40px);
+	transition: all 0.3s ease;
+}
+
+/* icon of reselect button, including two arrows */
+.button-reselect-icon {
+	position: relative;
+	height: 100%;
+	color: var(--parent-color);
+	border: none;
+	border-radius: 50%;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	aspect-ratio: 1;
+}
+
+/* container of two arrows */
+.arrow-container {
+	position: relative;
+	height: 100%;
+	color: var(--parent-color);
+	display: flex;
+	transform-origin: center;
+	justify-content: center;
+	align-items: center;
+	aspect-ratio: 1;
+}
+
+/* top arrow */
+.arrow-arc1 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	font-size: clamp(20px, 4.5vw, 30px);
+	font-weight: bold;
+	line-height: 0px;
+	top: 32%;
+	text-align: center;
+	transform: scaleX(-1);
+}
+
+/* down arrow */
+.arrow-arc2 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	font-size: clamp(20px, 4.5vw, 30px);
+	font-weight: bold;
+	line-height: 0px;
+	top: 73%;
+	text-align: center;
+	transform: scaleX(-1);
+}
+
+/* text of the button */
+.button-reselect-text {
+	font-family: 'Gamja Flower', cursive;
+	font-size: clamp(20px, 4.0vw, 25px);
+	font-weight: bold;
+	flex-grow: 1;
+	text-align: center;
+	white-space: nowrap;
+}
+
+
+/* on button event */
+.button-image-reselect:hover  .button-reselect-icon{
+	animation: spin 0.5s linear forwards;
+}
+
+.button-image-reselect:not(:hover) .button-reselect-icon{
+	animation: spin-reverse 0.5s linear forwards;
+}
+
+.button-image-reselect:hover {
+	width: clamp(100px, 20vw, 130px);
+	color: #666;
+	--parent-color: #666;
+	background-color: #DDD;
+	border-color: #BBB;	
+}
+
+.button-image-reselect:active {
+	color: #AAA;
+	--parent-color: #AAA;
+	background-color: #EEE;
+	border-color: #DDD;
+	transform: scale(0.98);
+}
+
+
+/* animation */
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(180deg);
+	}
+}
+
+@keyframes spin-reverse {
+	from {
+		transform: rotate(180deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}

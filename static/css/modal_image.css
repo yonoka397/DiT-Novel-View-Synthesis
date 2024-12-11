@@ -1,0 +1,83 @@
+/* modal container that show the zoom-in image */
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.3s ease;
+}
+
+/* modal content */
+.modal-content {
+	position: relative;
+	background: white;
+	padding: 20px;
+	border-radius: 8px;
+	max-width: 70%;
+	max-height: 70%;
+	width: clamp(200px, 75%, 900px);
+	height: clamp(200px, 75%, 900px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+/* enlarged image */
+.modal-content img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	border-radius: 8px;
+}
+
+/* close modal button */
+.btn-close-modal {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	font-size: 23px;
+	font-weight: bold;
+	color: #555;
+	cursor: pointer;
+	border: 3px solid #555;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+	transition: transform 0.2s ease, background-color 0.2s ease;
+	padding-bottom: 5px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+
+/* on image click */
+.modal.show {
+	visibility: visible;
+	opacity: 1;
+}
+
+/* on close button enevt */
+.btn-close-modal:hover {
+	transform: scale(1.1);
+	background-color: #f0f0f0;
+}
+
+.btn-close-modal:active {
+	transform: scale(0.98);
+	color: #888;
+	border-color: #888;
+}

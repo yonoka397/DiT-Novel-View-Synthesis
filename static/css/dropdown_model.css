@@ -1,0 +1,80 @@
+/* dropdown container select which dataset train on the model */
+.dropdown-model {
+	position: relative;
+	display: inline-block;
+	margin-top: 30px;
+}
+
+/* dropdown button */
+.dropdown-btn {
+	background-color: white;
+	color: #0078ff;
+	border: 2px solid #0078ff;
+	padding: 2px 10px 2px 10px;
+	font-size: clamp(20px, 2.2vw, 27px);
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 6px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+	display: flex;
+	align-items: center;
+	width: clamp(200px, 22vw, 250px);
+	font-family: 'Gamja Flower', cursive;
+}
+
+/* arrow (the icon) */
+.arrow {
+	margin-right: 10px;
+	transition: transform 0.3s ease;
+	font-size: 25px;
+}
+
+/* dropdown menu */
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: white;
+	border: 1px solid #0078ff;
+	border-radius: 6px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+	margin: 0px 0 0;
+	padding: 0;
+	list-style: none;
+	z-index: 1000;
+	width: 100%;
+	font-size: clamp(20px, 1.5vw, 25px);
+}
+
+/* dropdown menu items */
+.dropdown-menu li {
+	border-bottom: 1px solid #d8e7fc;
+}
+
+.dropdown-menu li:last-child {
+	border-bottom: none;
+}
+
+.dropdown-menu a {
+	color: #0078ff;
+	padding: 10px 20px;
+	text-decoration: none;
+	display: block;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* on dropdown event */
+.dropdown-model.active .arrow {
+	transform: rotate(180deg);
+}
+
+.dropdown-model.active .dropdown-menu {
+	display: block;
+}
+
+.dropdown-menu a:hover {
+	background-color: #e7f3ff;
+	color: #0056b3;
+}

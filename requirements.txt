@@ -1,0 +1,14 @@
+# if you want to use html demo
+flask
+werkzeug
+
+# essential for the model train and sample
+einops
+numpy
+Pillow
+timm
+torch
+torchvision
+torchaudio
+tqdm
+requests
