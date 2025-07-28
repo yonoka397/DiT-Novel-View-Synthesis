@@ -53,8 +53,10 @@ Trained model weights and optimizer state at [here](https://drive.google.com/dri
 The model architecture is based on a Diffusion Transformer. The overview of model illustrated as shown in the images below.
 
 <div align="center">
-    <img src="images/model_struct.png" width="1200px">
+    <img src="images/model_struct_diffusion.png" width="1200px">
     <br>
+    <img src="images/model_struct.png" width="1200px">
+	<br>
     <img src="images/model_struct_stream_block.png" width="1200px">
 </div>
 <br>
@@ -73,7 +75,8 @@ The core of the model consists of a series of Stream Blocks, as shown in Fig. 2.
 The model uses a weighted combination of two loss functions:
 - Mean Squared Error (MSE)
 - Kullback–Leibler Divergence (KL Divergence)
-Each is weighted equally (0.5). The Adam optimizer is used for training.
+Each is weighted equally (0.5).
+The Adam optimizer is used for training.
 
 ## Demo
 
