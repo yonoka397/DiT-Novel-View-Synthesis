@@ -1,7 +1,7 @@
 
-# Simple Novel View Synthesis use Diffusion Transformer
+# Simple Novel View Synthesis using Diffusion Transformer
 
-This project use simple Diffusion Transformer to synthesis novel view of original image view.
+This project uses simple Diffusion Transformer to synthesis novel view of original image view.
 
 Here are some example (Horizontal rotate 60&deg; Clockwise &#10227;):
 <div align="center">
